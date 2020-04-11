@@ -13,6 +13,10 @@ a {
     -webkit-text-decoration-skip: objects;
 }
 
+.bold {
+    font-weight: 700;
+}
+
 .bd-example {
     position: relative;
     padding: 1rem;
@@ -229,6 +233,10 @@ a {
 
 .about-me-text p:not(:last-child) {
     margin-bottom: 15px;
+}
+
+.about-me-text ul {
+    list-style: none;
 }
 
 .footer {
