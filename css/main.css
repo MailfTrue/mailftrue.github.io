@@ -177,6 +177,8 @@ a {
 
 .content {
     padding: 15px 20px;
+    overflow: auto;
+    max-height: calc(100vh - 250px);
 }
 
 .main {
@@ -184,11 +186,14 @@ a {
 }
 
 .blockquote {
-    white-space: pre-line;
     margin-bottom: 1rem;
     font-size: 1.25rem;
     margin: 0 0 1rem;
     text-align: center!important;
+}
+
+.blackquote p {
+    white-space: pre-line;
 }
 
 .blockquote-footer {
@@ -267,5 +272,13 @@ a {
         order: 1;
         margin-right: 0;
         margin-left: 0;
+    }
+
+    .photo {
+        width: 100px;
+    }
+
+    .about-me-text {
+        width: calc(100% - 120px);
     }
 }
