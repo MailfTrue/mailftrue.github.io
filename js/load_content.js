@@ -4,6 +4,8 @@ const URLS = {
   '/verse': ['/task1/verse.html', 'Стих']
 }
 
+const USE_HISTORY = !window.location.host.endsWith('.github.io')
+
 function load_page(path, config) {
     if (!config)
       config = {};
@@ -16,10 +18,12 @@ function load_page(path, config) {
     if (xhr.status == 200) {
       container.innerHTML = xhr.responseText;
       document.title = title;
-      if (!config.replace_state)
-        history.pushState({path}, title, path);
-      else
-        history.replaceState({path}, title, path);
+      if (USE_HISTORY) {
+        if (!config.replace_state)
+          history.pushState({path}, title, path);
+        else
+          history.replaceState({path}, title, path);
+      }
     } else
       alert('load error');
 }
@@ -43,7 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
     load_page(current_path, {replace_state: true});
 });
 
-window.addEventListener('popstate', function(e){
-  load_page(e.state.path, {replace_state: true});
-  return true;
-});
+if (USE_HISTORY) {
+  window.addEventListener('popstate', function(e){
+    load_page(e.state.path, {replace_state: true});
+    return true;
+  });
+}
