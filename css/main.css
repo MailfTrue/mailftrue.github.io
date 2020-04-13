@@ -228,7 +228,11 @@ a {
 
 .photo {
     width: 150px;
-    margin: 0 20px 20px 0;
+    margin-right: 10px;
+}
+
+.about-me-text p {
+    line-height: 21px;
 }
 
 .about-me-text p:not(:last-child) {
@@ -249,8 +253,9 @@ a {
     overflow: auto;
 }
 
-.hobbies-list {
+ul.hobbies-list {
     margin-left: 20px;
+    list-style: disc;
 }
 
 @media (print) {
@@ -293,6 +298,5 @@ a {
 
     .photo {
         width: 100px;
-        margin: 0 10px 0 0;
     }
 }
